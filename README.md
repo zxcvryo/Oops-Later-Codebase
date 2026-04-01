@@ -318,24 +318,24 @@ At that point, the app becomes fully interactive.
 ```mermaid
 flowchart TD
     A["User runs Python command"]:::input --> B{"Which file is run?"}:::decision
-    B -->|Requested learning flow| C["`python main.py`"]:::python
-    B -->|Actual repo start| D["`python server.py`"]:::python
+    B -->|Requested learning flow| C["'python main.py'"]:::python
+    B -->|Actual repo start| D["'python server.py'"]:::python
 
-    C --> E["`main.py` imports `app` from `server.py`"]:::python
+    C --> E["'main.py' imports 'app' from 'server.py'"]:::python
     E --> F["Flask app object is created"]:::server
-    F --> G["Current repo note: `main.py` alone does not fully start the server"]:::warning
+    F --> G["Current repo note: 'main.py' alone does not fully start the server"]:::warning
 
-    D --> H["`server.py` starts the Flask/Waitress server"]:::server
+    D --> H["'server.py' starts the Flask/Waitress server"]:::server
     H --> I["Browser requests `/`"]:::browser
-    I --> J["Flask serves `index.html`"]:::server
-    J --> K["Browser loads `css/styles.css`"]:::asset
-    J --> L["Browser loads `js/storage.js`"]:::asset
-    J --> M["Browser loads `js/taskParser.js`"]:::asset
-    J --> N["Browser loads `js/sampleData.js`"]:::asset
-    J --> O["Browser loads `js/app.js`"]:::asset
-    O --> P["`DOMContentLoaded` runs `init()`"]:::js
-    P --> Q["`storage.js` loads saved tasks"]:::js
-    P --> R["`taskParser.js` becomes ready for future typed input"]:::js
+    I --> J["Flask serves 'index.html'"]:::server
+    J --> K["Browser loads 'css/styles.css'"]:::asset
+    J --> L["Browser loads 'js/storage.js'"]:::asset
+    J --> M["Browser loads 'js/taskParser.js'"]:::asset
+    J --> N["Browser loads 'js/sampleData.js'"]:::asset
+    J --> O["Browser loads 'js/app.js'"]:::asset
+    O --> P["'DOMContentLoaded' runs 'init()'"]:::js
+    P --> Q["'storage.js' loads saved tasks"]:::js
+    P --> R["'taskParser.js' becomes ready for future typed input"]:::js
     P --> S["UI is rendered on screen"]:::ui
 
     classDef input fill:#fef3c7,stroke:#d97706,color:#451a03,stroke-width:2px;
@@ -1284,12 +1284,12 @@ It is used because it is better suited for serving the app as a real server than
 ```mermaid
 flowchart TD
     A["Browser requests a URL"]:::browser --> B{"Which path?"}:::decision
-    B -->|`/`| C["Run `index()`"]:::python
-    B -->|`/css/...`| D["Run `serve_css(filename)`"]:::python
-    B -->|`/js/...`| E["Run `serve_js(filename)`"]:::python
-    C --> F["`send_file('index.html')`"]:::server
-    D --> G["`send_from_directory('css', filename)`"]:::server
-    E --> H["`send_from_directory('js', filename)`"]:::server
+    B -->|`/'| C["Run 'index()'"]:::python
+    B -->|`/css/...'| D["Run 'serve_css(filename)'"]:::python
+    B -->|`/js/...'| E["Run 'serve_js(filename)'"]:::python
+    C --> F["'send_file('index.html')'"]:::server
+    D --> G["'send_from_directory('css', filename)'"]:::server
+    E --> H["'send_from_directory('js', filename)'"]:::server
     F --> I["Return response"]:::python
     G --> I
     H --> I
@@ -1654,8 +1654,8 @@ var newTask = {
 
 ```mermaid
 flowchart LR
-    A["Array<br/>`[task1, task2, task3]`"] --> B["List of items"]
-    C["Object<br/>`{ title: 'Buy milk', priority: 'high' }`"] --> D["One item with named fields"]
+    A["Array<br/>'[task1, task2, task3]'"] --> B["List of items"]
+    C["Object<br/>'{ title: 'Buy milk', priority: 'high' }'"] --> D["One item with named fields"]
 ```
 
 ## 5. DOM Basics
@@ -1693,8 +1693,8 @@ Meaning:
 
 ```mermaid
 flowchart TD
-    A["User clicks or types"] --> B["JavaScript listens with `addEventListener`"]
-    B --> C["JS finds element with `getElementById` / `querySelector`"]
+    A["User clicks or types"] --> B["JavaScript listens with 'addEventListener'"]
+    B --> C["JS finds element with 'getElementById' / 'querySelector'"]
     C --> D["JS reads or changes value/text/class"]
     D --> E["Browser updates the visible page"]
 ```
@@ -1772,8 +1772,8 @@ var Storage = (function() {
 ```mermaid
 flowchart LR
     A["IIFE starts"] --> B["private variables and functions exist inside"]
-    B --> C["`return { ... }` exposes selected functions"]
-    C --> D["outside files can use `Storage.getTasks()`"]
+    B --> C["'return { ... }' exposes selected functions"]
+    C --> D["outside files can use 'Storage.getTasks()'"]
 ```
 
 ## 8. Regex Basics
@@ -3534,7 +3534,7 @@ Submit assignment tomorrow #college high priority
 
 ```mermaid
 flowchart LR
-    A["Submit assignment tomorrow #college high priority"] --> B["find priority"]
+    A["Submit assignment tomorrow college high priority"] --> B["find priority"]
     B --> C["priority = high"]
     C --> D["find tag"]
     D --> E["tags = ['college']"]
@@ -5698,8 +5698,8 @@ So the bridge idea is still part of the full project, just not mainly inside sta
 
 ```mermaid
 flowchart TD
-    A["body"] --> B["#app.app-container"]
-    B --> C["aside.sidebar"]
+    A["body"] --> B["app-app-container"]
+    B --> C["aside-sidebar"]
     B --> D["main.main-content"]
     C --> C1["sidebar header"]
     C --> C2["sidebar nav"]
@@ -5710,16 +5710,16 @@ flowchart TD
     C2 --> C25["Trash"]
     C2 --> C26["Settings"]
     C --> C3["theme toggle"]
-    D --> D1["#nowSlotContainer"]
+    D --> D1["nowSlotContainer"]
     D --> D2["Energy Mode button"]
     D --> D3["quick add form"]
-    D --> D4["#viewContainer"]
-    A --> E["#taskModal"]
-    A --> F["#welcomeModal"]
-    A --> G["#globalSearchOverlay"]
-    A --> H["#newTaskModal"]
-    A --> I["#energyModal"]
-    A --> J["#toastContainer"]
+    D --> D4["viewContainer"]
+    A --> E["taskModal"]
+    A --> F["welcomeModal"]
+    A --> G["globalSearchOverlay"]
+    A --> H["newTaskModal"]
+    A --> I["energyModal"]
+    A --> J["toastContainer"]
 ```
 
 ---
@@ -6219,7 +6219,7 @@ and:
 ```mermaid
 flowchart LR
     A["JS adds .dark"] --> B["dark variables replace root variables"]
-    B --> C["component selectors like .dark .sidebar apply"]
+    B --> C["component selectors like dark-sidebar apply"]
     C --> D["browser paints dark UI"]
 ```
 
@@ -6382,8 +6382,8 @@ Meaning:
 
 ```mermaid
 flowchart LR
-    A["HTML element<br/>example: <button class='nav-item active'>"] --> B["CSS selector match<br/>.nav-item and .nav-item.active"]
-    B --> C["variables resolved<br/>var(--card), var(--neon-pink)"]
+    A["HTML element<br/>example: button_nav-item"] --> B["CSS selector match<br/>nav-item and nav-item-active"]
+    B --> C["variables resolved<br/>card, neon-pink"]
     C --> D["properties applied<br/>background, border, shadow, color"]
     D --> E["browser paints final button"]
 ```
@@ -7646,8 +7646,8 @@ flowchart TD
     C --> H["app.js"]
     I["server.py"] --> C
 
-    H --> J["loadTheme() / Storage.getTheme()"]
-    H --> K["loadTasks() / Storage.getTasks()"]
+    H --> J["loadTheme and Storage.getTheme"]
+    H --> K["loadTasks and Storage.getTasks"]
     H --> L["renderView()"]
     H --> M["handleQuickAdd()"]
     M --> F
